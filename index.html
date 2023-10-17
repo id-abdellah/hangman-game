@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>currently blank</title>
+  <!--  -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/normalize.css" />
+  <!-- font awesome library -->
+  <link rel="stylesheet" href="assets/css/all.min.css" />
+
+</head>
+
+<body>
+
+  <div class="game-wrapper">
+
+    <div class="game-draw">
+      <div class="draw">
+        <span class="hang-machine"></span>
+        <span class="hang-machine"></span>
+        <span class="hang-machine"></span>
+        <span class="hang-machine"></span>
+        <span class="hang-machine"></span>
+        <!-- the man itself -->
+        <span class="head man"></span>
+        <span class="nerve man"></span>
+        <span class="left-hand man"></span>
+        <span class="right-hand man"></span>
+        <span class="left-foot man"></span>
+        <span class="right-foot man"></span>
+      </div>
+      <div class="game-title">HANGMAN GAME</div>
+    </div>
+
+    <div class="game-right">
+      <div class="inp"></div>
+      <div class="hint"></div>
+      <div class="keyboard"></div>
+    </div>
+
+    <div class="lose-modal">
+      <div>
+        <img src="assets/images/icons8-sad-100.png" alt="">
+        <p class="status">Game Over!</p>
+        <p class="msg">The correct word was: <span>idonknow</span></p>
+        <button class="restartTheGame">Play Again</button>
+      </div>
+    </div>
+
+    <div class="win-modal">
+      <div>
+        <img src="assets/images/icons8-win-100.png" alt="">
+        <p class="status">Winning</p>
+        <p class="msg">The correct word is: <span>idonknow</span></p>
+        <button class="restartTheGame">Play Again</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="assets/js/wordsList.js" type="module"></script>
+  <script src="assets/js/main.js" type="module"></script>
+</body>
+
+</html>

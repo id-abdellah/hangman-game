@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+:root {
+  --mainColor: #99B080;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--mainColor);
+  font-family: "poppins", sans-serif;
+  min-height: 100dvh;
+  position: relative;
+}
+
+/* ---------------------------- */
+.game-wrapper {
+  background-color: white;
+  padding: 20px;
+  width: fit-content;
+  border-radius: 8px;
+  margin: 20px auto;
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 640px) {
+  .game-wrapper {
+    padding: 10px;
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
+.game-draw {
+  width: fit-content;
+}
+.game-draw .game-title {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 2px;
+}
+.game-draw .draw {
+  width: 270px;
+  height: 250px;
+  position: relative;
+}
+.game-draw .draw span {
+  display: block;
+  background-color: black;
+  border-radius: 20px;
+  position: absolute;
+}
+.game-draw .draw span:nth-child(1) {
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+}
+.game-draw .draw span:nth-child(2) {
+  width: 3px;
+  height: 100%;
+  top: 0;
+  left: 30px;
+}
+.game-draw .draw span:nth-child(3) {
+  width: calc(100% - 100px);
+  height: 3px;
+  top: 0;
+  left: 30px;
+}
+.game-draw .draw span:nth-child(4) {
+  width: 3px;
+  height: 30px;
+  top: -3px;
+  left: 40px;
+  transform: rotate(45deg);
+}
+.game-draw .draw span:nth-child(5) {
+  width: 3px;
+  height: 35px;
+  top: 0;
+  right: 70px;
+}
+.game-draw .draw span:nth-child(n+6) {
+  display: none;
+}
+.game-draw .draw span.head {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 3px solid black;
+  top: 34px;
+  right: 47px;
+}
+.game-draw .draw span.nerve {
+  width: 3px;
+  height: 70px;
+  top: 83px;
+  right: 70px;
+}
+.game-draw .draw span.left-hand {
+  width: 3px;
+  height: 50px;
+  top: 95px;
+  right: 88px;
+  rotate: 45deg;
+}
+.game-draw .draw span.right-hand {
+  width: 3px;
+  height: 50px;
+  top: 95px;
+  right: 52px;
+  rotate: -45deg;
+}
+.game-draw .draw span.left-foot {
+  width: 3px;
+  height: 50px;
+  top: 144px;
+  right: 88px;
+  rotate: 45deg;
+}
+.game-draw .draw span.right-foot {
+  width: 3px;
+  height: 50px;
+  top: 144px;
+  right: 52px;
+  rotate: -45deg;
+}
+
+.game-right {
+  width: 300px;
+}
+.game-right .inp {
+  display: flex;
+  gap: 5px;
+}
+.game-right .inp span {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding-block: 8px;
+  border-bottom: 2px solid black;
+}
+.game-right .hint {
+  font-weight: 500;
+  text-align: center;
+  margin: 30px 0;
+  line-height: 1.6;
+}
+.game-right .keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+}
+.game-right .keyboard span {
+  display: block;
+  width: 29px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mainColor);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white;
+  user-select: none;
+}
+.game-right .keyboard span:hover {
+  background-color: #cccccc;
+}
+
+.lose-modal,
+.win-modal {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.564);
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.win-modal > div,
+.lose-modal > div {
+  width: 280px;
+  background-color: white;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+.win-modal > div img,
+.lose-modal > div img {
+  display: block;
+  margin: 0 auto;
+  width: 120px;
+}
+.win-modal > div p.status,
+.lose-modal > div p.status {
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+  margin: 10px 0;
+}
+.win-modal > div p.msg,
+.lose-modal > div p.msg {
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.win-modal > div p.msg span,
+.lose-modal > div p.msg span {
+  color: var(--mainColor);
+}
+.win-modal > div button,
+.lose-modal > div button {
+  display: block;
+  padding: 10px 20px;
+  background-color: var(--mainColor);
+  margin: 0 auto;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  transition: 0.3s;
+  cursor: pointer;
+}
+.win-modal > div button:hover,
+.lose-modal > div button:hover {
+  opacity: 0.8;
+}
+
+/*# sourceMappingURL=style.css.map */
